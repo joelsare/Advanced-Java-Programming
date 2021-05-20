@@ -1,0 +1,43 @@
+body {
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/moroccan-flower.png');
+    text-align: center
+}
+
+input[type=submit] {
+    background-color: #9e6eff;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #d4bfff;
+}
+input[type=text], input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+a:link {
+  text-decoration: none;
+  color: #9e6eff;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #6c24ff;
+}
+
+a:hover {
+  text-decoration: underline;
+}

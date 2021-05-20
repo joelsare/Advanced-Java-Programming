@@ -1,0 +1,39 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<%-- 
+    Document   : DataSourceExample
+    Created on : Oct 23, 2020, 12:39:21 PM
+    Author     : joel
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <h1>DataSource With SQL Tags</h1>
+    <sql:query var="result" scope="request" dataSource="jdbc/DataSourceExample">
+        SELECT * FROM customer
+    </sql:query>
+    
+    <table border="1">
+        <!-- column headers -->
+        <tr>
+        <c:forEach var="columnName" items="${result.columnNames}">
+            <th><c:out value="${columnName}"/></th>
+        </c:forEach>
+    </tr>
+    <!-- column data -->
+    <c:forEach var="row" items="${result.rowsByIndex}">
+        <tr>
+        <c:forEach var="column" items="${row}">
+            <td><c:out value="${column}"/></td>
+        </c:forEach>
+        </tr>
+    </c:forEach>
+</table>
+    </body>
+</html>
